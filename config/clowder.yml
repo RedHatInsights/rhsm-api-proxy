@@ -5,7 +5,7 @@ apps:
       proxy:
         logs: {}
         listen:
-        - ":8000"
+        - ":{{.AppConfig.PublicPort}}"
         routes:
         - match:
           - path:
@@ -14,7 +14,7 @@ apps:
           - handler: rewrite
             strip_path_prefix: "/api/rhsm"
           - handler: rbac
-            service_url: http://localhost:8001/api/rbac/v1
+            service_url: http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1
             application: subscriptions
           - handler: reverse_proxy
             upstreams:
@@ -34,7 +34,7 @@ apps:
             body: "pong"
       metrics:
         listen:
-        - ":9000"
+        - ":{{.AppConfig.MetricsPort}}"
         routes:
         - handle:
           - handler: metrics
