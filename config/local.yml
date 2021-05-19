@@ -21,9 +21,7 @@ apps:
             - dial: api.rhsm.redhat.com:443
             transport:
               protocol: http
-              tls:
-                client_certificate_file: "/etc/pki/tls/certs/enterprise_services/nonprod-itpntautomation.pem"
-                client_certificate_key_file: "/etc/pki/tls/certs/enterprise_services/nonprod-itpntautomation.pem"
+              tls: {}
               response_header_timeout: 60s
         - match:
           - path:
