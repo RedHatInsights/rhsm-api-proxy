@@ -16,7 +16,7 @@ objects:
     dependencies:
     - rbac
     deployments:
-    - name: proxy
+    - name: service
       minReplicas: ${{MIN_REPLICAS}}
       webServices:
         public:
