@@ -32,12 +32,12 @@ objects:
         - "/config/config.yml.tmpl"
         readinessProbe:
           httpGet:
-            path: /health
-            port: public
+            path: /_proxy/ping
+            port: web
         livenessProbe:
           httpGet:
-            path: /health
-            port: public
+            path: /_proxy/ping
+            port: web
           initialDelaySeconds: 10
         volumes:
         - name: config
