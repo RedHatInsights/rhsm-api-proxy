@@ -20,7 +20,7 @@ func (m Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request, next caddy
 		// Respond with 503 if RBAC is unavailable
 		if err != nil {
 			m.logger.Sugar().Errorw("failed to get access for request", "error", err)
-			http.Error(w, "Authorizaton service unavailable", http.StatusServiceUnavailable)
+			http.Error(w, "Authorization service unavailable", http.StatusServiceUnavailable)
 			return nil
 		}
 
