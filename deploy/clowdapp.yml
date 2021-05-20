@@ -115,9 +115,9 @@ parameters:
 - name: CPU_REQUEST
   value: 500m
 - name: MEMORY_LIMIT
-  value: 1Gi
+  value: 600Mi
 - name: MEMORY_REQUEST
-  value: 500Mi
+  value: 300Mi
 - description: Clowder ENV
   name: ENV_NAME
   required: true
