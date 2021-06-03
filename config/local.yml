@@ -18,7 +18,12 @@ apps:
             application: subscriptions
           - handler: reverse_proxy
             upstreams:
-            - dial: api.rhsm.redhat.com:443
+            - dial: echo-api.3scale.net:443
+            headers:
+              request:
+                delete:
+                  - Cookie
+                  - X-3scale-Proxy-Secret-Token
             transport:
               protocol: http
               tls: {}

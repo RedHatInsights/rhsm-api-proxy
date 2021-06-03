@@ -85,6 +85,11 @@ objects:
                 - handler: reverse_proxy
                   upstreams:
                   - dial: ${RHSM_API_HOST}:${RHSM_API_PORT}
+                  headers:
+                    request:
+                      delete:
+                      - Cookie
+                      - X-3scale-Proxy-Secret-Token
                   transport:
                     protocol: http
                     tls:
