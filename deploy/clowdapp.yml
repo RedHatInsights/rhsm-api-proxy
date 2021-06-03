@@ -82,6 +82,7 @@ objects:
                 - handler: rbac
                   service_url: http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1
                   application: subscriptions
+                  timeout: 10s
                 - handler: reverse_proxy
                   upstreams:
                   - dial: ${RHSM_API_HOST}:${RHSM_API_PORT}
