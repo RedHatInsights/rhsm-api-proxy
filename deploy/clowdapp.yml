@@ -140,4 +140,4 @@ parameters:
 - name: RHSM_API_PORT
   value: '443'
 - name: APPLICATION
-  value: subscription,config-manager
+  value: subscriptions,config-manager
