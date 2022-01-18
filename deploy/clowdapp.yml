@@ -81,7 +81,9 @@ objects:
                   strip_path_prefix: "/api/rhsm"
                 - handler: rbac
                   service_url: http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1
-                  application: subscriptions
+                  application: 
+                  - subscriptions
+                  - config-manager
                   timeout: 10s
                 - handler: reverse_proxy
                   upstreams:
