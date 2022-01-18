@@ -15,7 +15,7 @@ apps:
             strip_path_prefix: "/api/rhsm"
           - handler: rbac
             service_url: http://localhost:8001/api/rbac/v1
-            application: subscriptions
+            application: subscriptions,config-manager
           - handler: reverse_proxy
             upstreams:
             - dial: echo-api.3scale.net:443
