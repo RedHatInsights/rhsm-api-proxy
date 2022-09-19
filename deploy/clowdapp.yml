@@ -21,6 +21,7 @@ objects:
       webServices:
         public:
           enabled: true
+          apiPath: rhsm
       podSpec:
         image: ${IMAGE}:${IMAGE_TAG}
         args:
