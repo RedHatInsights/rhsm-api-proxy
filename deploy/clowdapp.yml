@@ -66,6 +66,8 @@ objects:
   data:
     config.yml.tmpl: |
       ---
+      admin:
+        listen: ":2020"
       apps:
         http:
           servers:
