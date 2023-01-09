@@ -30,7 +30,7 @@ objects:
         - "-adapter"
         - "clowder"
         - "-config"
-        - "/config/config.yml.tmpl"
+        - "/config/config.json.tmpl"
         readinessProbe:
           httpGet:
             path: /_proxy/ping
@@ -64,56 +64,101 @@ objects:
   metadata:
     name: ${APP_NAME}-caddy
   data:
-    config.yml.tmpl: |
-      ---
-      admin:
-        listen: ":2020"
-      apps:
-        http:
-          servers:
-            proxy:
-              logs: {}
-              listen:
-              - ":{{.AppConfig.PublicPort}}"
-              routes:
-              - match:
-                - path:
-                  - "/api/rhsm/*"
-                handle:
-                - handler: rewrite
-                  strip_path_prefix: "/api/rhsm"
-                - handler: rbac
-                  service_url: http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1
-                  application: ${APPLICATION}
-                  timeout: 10s
-                - handler: reverse_proxy
-                  upstreams:
-                  - dial: ${RHSM_API_HOST}:${RHSM_API_PORT}
-                  headers:
-                    request:
-                      delete:
-                      - Cookie
-                      - X-3scale-Proxy-Secret-Token
-                  transport:
-                    protocol: http
-                    tls:
-                      client_certificate_file: /tls/keypair.pem
-                      client_certificate_key_file: /tls/keypair.pem
-                    response_header_timeout: 60s
-              - match:
-                - path:
-                  - "/_proxy/ping"
-                handle:
-                - handler: static_response
-                  status_code: 200
-                  body: "pong"
-            metrics:
-              listen:
-              - ":{{.AppConfig.MetricsPort}}"
-              routes:
-              - handle:
-                - handler: metrics
-
+    config.json.tmpl: |
+      {
+        "admin": {
+          "listen": ":2020"
+        },
+        "apps": {
+          "http": {
+            "servers": {
+              "proxy": {
+                "logs": {},
+                "listen": [
+                  ":{{.AppConfig.PublicPort}}"
+                ],
+                "routes": [
+                  {
+                    "match": [
+                      {
+                        "path": [
+                          "/api/rhsm/*"
+                        ]
+                      }
+                    ],
+                    "handle": [
+                      {
+                        "handler": "rewrite",
+                        "strip_path_prefix": "/api/rhsm"
+                      },
+                      {
+                        "handler": "rbac",
+                        "service_url": "http://{{(index .Deps \"rbac\" \"service\").Hostname}}:{{(index .Deps \"rbac\" \"service\").Port}}/api/rbac/v1",
+                        "application": "${APPLICATION}",
+                        "timeout": "10s"
+                      },
+                      {
+                        "handler": "reverse_proxy",
+                        "upstreams": [
+                          {
+                            "dial": "${RHSM_API_HOST}:${RHSM_API_PORT}"
+                          }
+                        ],
+                        "headers": {
+                          "request": {
+                            "delete": [
+                              "Cookie",
+                              "X-3scale-Proxy-Secret-Token"
+                            ]
+                          }
+                        },
+                        "transport": {
+                          "protocol": "http",
+                          "tls": {
+                            "client_certificate_file": "/tls/keypair.pem",
+                            "client_certificate_key_file": "/tls/keypair.pem"
+                          },
+                          "response_header_timeout": "60s"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "match": [
+                      {
+                        "path": [
+                          "/_proxy/ping"
+                        ]
+                      }
+                    ],
+                    "handle": [
+                      {
+                        "handler": "static_response",
+                        "status_code": 200,
+                        "body": "pong"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "metrics": {
+                "listen": [
+                  ":{{.AppConfig.MetricsPort}}"
+                ],
+                "routes": [
+                  {
+                    "handle": [
+                      {
+                        "handler": "metrics"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
 parameters:
 - name: APP_NAME
   value: rhsm-api-proxy
