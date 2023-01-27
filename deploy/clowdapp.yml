@@ -27,9 +27,9 @@ objects:
         args:
         - "/opt/app/caddy"
         - "run"
-        - "-adapter"
+        - "--adapter"
         - "clowder"
-        - "-config"
+        - "--config"
         - "/config/config.json.tmpl"
         readinessProbe:
           httpGet:
