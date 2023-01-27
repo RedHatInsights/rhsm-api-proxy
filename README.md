@@ -26,7 +26,7 @@ ok  	github.com/RedHatInsights/rhsm-api-proxy/modules/rbac	(cached)
 Run Caddy with the local config example
 ```
 $ make run
-go run cmd/caddy/caddy.go run -adapter yaml -config config/local.yml 
+go run cmd/caddy/caddy.go run -config config/local.json 
 2021/05/04 11:47:50.589	INFO	using provided configuration	{"config_file": "config/local.yml", "config_adapter": "yaml"}
 2021/05/04 11:47:50.590	INFO	admin	admin endpoint started	{"address": "tcp/localhost:2019", "enforce_origin": false, "origins": ["localhost:2019", "[::1]:2019", "127.0.0.1:2019"]}
 2021/05/04 11:47:50.591	INFO	tls.cache.maintenance	started background certificate maintenance	{"cache": "0xc0002d60e0"}
