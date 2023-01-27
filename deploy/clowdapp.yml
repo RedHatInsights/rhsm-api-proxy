@@ -93,7 +93,7 @@ objects:
                       },
                       {
                         "handler": "rbac",
-                        "service_url": "http://{{(index .Deps \"rbac\" \"service\").Hostname}}:{{(index .Deps \"rbac\" \"service\").Port}}/api/rbac/v1",
+                        "service_url": "http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1",
                         "application": "${APPLICATION}",
                         "timeout": "10s"
                       },
