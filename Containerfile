@@ -3,8 +3,8 @@ LABEL maintainer=teamnado-ops@redhat.com
 
 ENV GODIR=/usr/local/go APPDIR=/opt/app CGO_ENABLED=0
 
-RUN curl -sfL --retry 10 -o /tmp/go.tar.gz https://go.dev/dl/go1.21.1.linux-amd64.tar.gz && \
-    echo "b3075ae1ce5dab85f89bc7905d1632de23ca196bd8336afd93fa97434cfa55ae /tmp/go.tar.gz" | sha256sum -c && \
+RUN curl -sfL --retry 10 -o /tmp/go.tar.gz https://go.dev/dl/go1.21.4.linux-amd64.tar.gz && \
+    echo "73cac0215254d0c7d1241fa40837851f3b9a8a742d0b54714cbdfb3feaf8f0af /tmp/go.tar.gz" | sha256sum -c && \
     mkdir -p $GODIR && \
     tar --strip-components=1 -zxf /tmp/go.tar.gz --directory $GODIR && \
     rm /tmp/go.tar.gz && \

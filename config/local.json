@@ -30,7 +30,7 @@
                   "handler": "reverse_proxy",
                   "upstreams": [
                     {
-                      "dial": "echo-api.3scale.net:443"
+                      "dial": "echo-api.3scale.net:7443"
                     }
                   ],
                   "headers": {
@@ -45,6 +45,12 @@
                     "protocol": "http",
                     "tls": {},
                     "response_header_timeout": "60s"
+                  },
+                  "health_checks": {
+                    "passive": {
+                      "fail_duration": "60s",
+                      "max_fails": 3
+                    }
                   }
                 }
               ]
