@@ -48,8 +48,8 @@
                   },
                   "health_checks": {
                     "passive": {
-                      "fail_duration": "60s",
-                      "max_fails": 3
+                      "fail_duration": "90s",
+                      "max_fails": 15
                     }
                   }
                 }
