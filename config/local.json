@@ -30,7 +30,7 @@
                   "handler": "reverse_proxy",
                   "upstreams": [
                     {
-                      "dial": "echo-api.3scale.net:7443"
+                      "dial": "echo-api.3scale.net:443"
                     }
                   ],
                   "headers": {
