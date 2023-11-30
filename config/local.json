@@ -45,6 +45,12 @@
                     "protocol": "http",
                     "tls": {},
                     "response_header_timeout": "60s"
+                  },
+                  "health_checks": {
+                    "passive": {
+                      "fail_duration": "90s",
+                      "max_fails": 5
+                    }
                   }
                 }
               ]
