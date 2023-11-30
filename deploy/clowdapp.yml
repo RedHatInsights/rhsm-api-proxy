@@ -119,6 +119,12 @@ objects:
                             "client_certificate_key_file": "/tls/keypair.pem"
                           },
                           "response_header_timeout": "60s"
+                        },
+                        "health_checks": {
+                          "passive": {
+                            "fail_duration": "90s",
+                            "max_fails": 5
+                          }
                         }
                       }
                     ]
