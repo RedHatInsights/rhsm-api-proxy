@@ -49,7 +49,7 @@
                   "health_checks": {
                     "passive": {
                       "fail_duration": "90s",
-                      "max_fails": 15
+                      "max_fails": 5
                     }
                   }
                 }
