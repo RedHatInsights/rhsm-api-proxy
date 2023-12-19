@@ -56,7 +56,7 @@ data:
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "description": "A value of 1 indicates that Prometheus could contact our metrics API and scrape data, whereas 0 indicates the API was unreachable (and that the application is probably down).",
+          "description": "A value of 1 indicates that Prometheus could contact our metrics API and scrape data, whereas 0 indicates the API was unreachable (and that the application is probably down)",
           "fieldConfig": {
             "defaults": {
               "links": []
@@ -206,3 +206,4 @@ data:
       "version": 0,
       "weekStart": ""
     }
+    
