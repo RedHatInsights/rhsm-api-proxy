@@ -1,6 +1,6 @@
 module github.com/RedHatInsights/rhsm-api-proxy
 
-go 1.21
+go 1.22
 
 require (
 	github.com/RedHatInsights/rbac-client-go v1.0.0
