@@ -1,3 +1,10 @@
-.git
-.github
-bin
+# Ignore everything
+**
+
+# Add only what is needed
+!cmd/caddy/caddy.go
+!misc/2015-IT-Root-CA.crt
+!misc/2022-IT-Root-CA.crt
+!modules/
+!go.mod
+!go.sum
