@@ -103,7 +103,7 @@ require (
 	github.com/shopspring/decimal v1.4.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
-	github.com/slackhq/nebula v1.6.1 // indirect
+	github.com/slackhq/nebula v1.9.5 // indirect
 	github.com/smallstep/certificates v0.26.1 // indirect
 	github.com/smallstep/go-attestation v0.4.4-0.20240109183208-413678f90935 // indirect
 	github.com/smallstep/nosql v0.6.1 // indirect
