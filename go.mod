@@ -21,7 +21,7 @@ require (
 	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/KimMachineGun/automemlimit v0.7.1 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
-	github.com/Masterminds/semver/v3 v3.3.0 // indirect
+	github.com/Masterminds/semver/v3 v3.3.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/Microsoft/go-winio v0.6.0 // indirect
 	github.com/alecthomas/chroma/v2 v2.15.0 // indirect
