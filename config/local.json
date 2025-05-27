@@ -35,6 +35,11 @@
                   ],
                   "headers": {
                     "request": {
+                      "replace": {
+                          "Host": [{
+                            "replace":"{http.reverse_proxy.upstream.hostport}"
+                          }]
+                      },
                       "delete": [
                         "Cookie",
                         "X-3scale-Proxy-Secret-Token"
