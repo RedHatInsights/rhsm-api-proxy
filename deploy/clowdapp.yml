@@ -106,6 +106,9 @@ objects:
                         ],
                         "headers": {
                           "request": {
+                            "replace": {
+                              "Host": "{http.reverse_proxy.upstream.hostport}"
+                            },
                             "delete": [
                               "Cookie",
                               "X-3scale-Proxy-Secret-Token"
