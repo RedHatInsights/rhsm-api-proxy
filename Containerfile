@@ -21,10 +21,6 @@ RUN go build -o caddy cmd/caddy/caddy.go
 # Multi-stage
 FROM registry.access.redhat.com/ubi9/ubi-minimal as run
 
-COPY misc/2015-IT-Root-CA.crt /etc/pki/ca-trust/source/anchors/2015-IT-Root-CA.crt
-COPY misc/2022-IT-Root-CA.crt /etc/pki/ca-trust/source/anchors/2022-IT-Root-CA.crt
-RUN update-ca-trust
-
 WORKDIR /opt/app/
 
 COPY --from=build /opt/app/caddy .
