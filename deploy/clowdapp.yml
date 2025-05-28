@@ -106,10 +106,8 @@ objects:
                         ],
                         "headers": {
                           "request": {
-                            "replace": {
-                              "Host": [{
-                                "replace":"{http.reverse_proxy.upstream.hostport}"
-                              }]
+                            "set": {
+                              "host": ["{http.reverse_proxy.upstream.hostport}"]
                             },
                             "delete": [
                               "Cookie",
