@@ -46,7 +46,12 @@
                   },
                   "transport": {
                     "protocol": "http",
-                    "tls": {},
+                    "tls": {
+                      "ca": {
+                        "provider": "file",
+                        "pem_files": ["/etc/pki/tls/certs/2022-IT-Root-CA.pem"]
+                      }
+                    },
                     "response_header_timeout": "60s"
                   },
                   "health_checks": {
