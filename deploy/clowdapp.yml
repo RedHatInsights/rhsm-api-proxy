@@ -121,7 +121,7 @@ objects:
                             "ca": {
                               "provider": "file",
                               "pem_files": ["/tls/2022-IT-Root-CA.pem"]
-                            }
+                            },
                             "client_certificate_file": "/tls/keypair.pem",
                             "client_certificate_key_file": "/tls/keypair.pem"
                           },
