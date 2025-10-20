@@ -1,8 +1,8 @@
 module github.com/RedHatInsights/rhsm-api-proxy
 
-go 1.24
+go 1.24.0
 
-toolchain go1.24.1
+toolchain go1.24.6
 
 require (
 	github.com/RedHatInsights/rbac-client-go v1.0.0
@@ -143,7 +143,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap/exp v0.3.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
-	golang.org/x/crypto/x509roots/fallback v0.0.0-20250305170421-49bf5b80c810 // indirect
+	golang.org/x/crypto/x509roots/fallback v0.0.0-20251009181029-0b7aa0cfb07b // indirect
 	golang.org/x/exp v0.0.0-20250305212735-054e65f0b394 // indirect
 	golang.org/x/mod v0.24.0 // indirect
 	golang.org/x/net v0.37.0 // indirect
