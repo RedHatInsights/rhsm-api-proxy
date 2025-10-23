@@ -30,7 +30,7 @@ spec:
   - name: dockerfile
     value: ./Containerfile
   pipelineRef:
-    name: docker-build-oci-ta
+    name: docker-build
   taskRunTemplate:
     serviceAccountName: build-pipeline-rhsm-api-proxy
   workspaces:
