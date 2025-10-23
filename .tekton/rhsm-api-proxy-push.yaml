@@ -26,6 +26,8 @@ spec:
     value: quay.io/redhat-user-workloads/teamnado-konflux-tenant/rhsm-api-proxy/rhsm-api-proxy:{{revision}}
   - name: dockerfile
     value: ./Containerfile
+  - name: IQE_PLUGINS
+    value: ""
   pipelineRef:
     name: docker-build
   taskRunTemplate:
