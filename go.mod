@@ -7,7 +7,7 @@ toolchain go1.24.5
 require (
 	github.com/RedHatInsights/rbac-client-go v1.0.0
 	github.com/caddyserver/caddy/v2 v2.10.0-beta.2
-	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32
+	github.com/ghodss/yaml v1.0.1-0.20220118164431-d8423dcdf344
 	github.com/redhatinsights/app-common-go v1.6.8
 	github.com/stretchr/testify v1.10.0
 	go.uber.org/zap v1.27.0
