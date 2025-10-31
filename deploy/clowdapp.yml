@@ -122,8 +122,8 @@ objects:
                               "provider": "file",
                               "pem_files": ["/tls/2022-IT-Root-CA.pem"]
                             },
-                            "client_certificate_file": "/tls/keypair.pem",
-                            "client_certificate_key_file": "/tls/keypair.pem"
+                            "client_certificate_file": "/tls/${PROXY_TLS_CERT_FILENAME}",
+                            "client_certificate_key_file": "/tls/${PROXY_TLS_KEY_FILENAME}"
                           },
                           "response_header_timeout": "60s"
                         },
@@ -176,7 +176,14 @@ parameters:
 - name: APP_NAME
   value: rhsm-api-proxy
 - name: PROXY_TLS_SECRET
-  value: proxy-client-tls
+  value: rhsmapiproxy-stage-certificate
+  description: TLS secret name for client certificate to RHSM API
+- name: PROXY_TLS_CERT_FILENAME
+  value: tls.crt
+  description: Filename of the certificate file within the TLS secret
+- name: PROXY_TLS_KEY_FILENAME
+  value: tls.key
+  description: Filename of the key file within the TLS secret
 - name: CPU_LIMIT
   value: 1000m
 - name: CPU_REQUEST
