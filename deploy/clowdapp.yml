@@ -202,3 +202,7 @@ parameters:
   value: '443'
 - name: APPLICATION
   value: subscriptions,config-manager
+- name: PROXY_TLS_CERT_FILENAME
+  value: "/tls/keypair.pem"
+- name: PROXY_TLS_KEY_FILENAME
+  value: "/tls/keypair.pem"
