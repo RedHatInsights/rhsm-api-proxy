@@ -3,12 +3,6 @@ A [Caddy](https://github.com/caddyserver/caddy)-based reverse proxy with custom 
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/RedHatInsights/rhsm-api-proxy)](https://goreportcard.com/report/github.com/RedHatInsights/rhsm-api-proxy) [![Go Reference](https://pkg.go.dev/badge/github.com/RedHatInsights/rhsm-api-proxy.svg)](https://pkg.go.dev/github.com/RedHatInsights/rhsm-api-proxy)
 
-## Modules
-
-### RBAC
-The RBAC module is middleware that obtains RBAC access for an authenticated request
-and inserts the base64-encoded access list as a request header. 
-
 ## Usage
 This repo builds a Caddy binary with custom modules included. A Makefile is included
 for convenience.
@@ -19,7 +13,6 @@ Execute Go unit tests
 $ make test
 go test ./...
 ?   	github.com/RedHatInsights/rhsm-api-proxy/cmd/caddy	[no test files]
-ok  	github.com/RedHatInsights/rhsm-api-proxy/modules/rbac	(cached)
 ```
 
 ### Run

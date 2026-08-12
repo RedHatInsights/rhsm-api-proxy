@@ -13,8 +13,6 @@ objects:
     webServices:
       public: true
       metrics: true
-    dependencies:
-    - rbac
     deployments:
     - name: service
       minReplicas: ${{MIN_REPLICAS}}
@@ -95,12 +93,6 @@ objects:
                       {
                         "handler": "rewrite",
                         "strip_path_prefix": "/api/rhsm"
-                      },
-                      {
-                        "handler": "rbac",
-                        "service_url": "http://{{(index .Deps "rbac" "service").Hostname}}:{{(index .Deps "rbac" "service").Port}}/api/rbac/v1",
-                        "application": "${APPLICATION}",
-                        "timeout": "10s"
                       },
                       {
                         "handler": "reverse_proxy",
@@ -207,8 +199,6 @@ parameters:
 - name: RHSM_API_HOST
 - name: RHSM_API_PORT
   value: '443'
-- name: APPLICATION
-  value: subscriptions,config-manager
 - name: PROXY_TLS_CERT_PATH
   value: "/tls/keypair.pem"
 - name: PROXY_TLS_KEY_PATH

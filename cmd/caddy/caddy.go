@@ -5,7 +5,6 @@ import (
 
 	// Caddy modules
 	_ "github.com/RedHatInsights/rhsm-api-proxy/modules/clowder"
-	_ "github.com/RedHatInsights/rhsm-api-proxy/modules/rbac"
 	_ "github.com/caddyserver/caddy/v2/modules/standard"
 )
 
