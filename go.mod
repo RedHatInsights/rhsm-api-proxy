@@ -1,6 +1,6 @@
 module github.com/RedHatInsights/rhsm-api-proxy
 
-go 1.25.5
+go 1.26.0
 
 require (
 	github.com/caddyserver/caddy/v2 v2.11.4
@@ -161,7 +161,7 @@ require (
 	golang.org/x/sys v0.45.0 // indirect
 	golang.org/x/term v0.43.0 // indirect
 	golang.org/x/text v0.37.0 // indirect
-	golang.org/x/time v0.15.0 // indirect
+	golang.org/x/time v0.16.0 // indirect
 	golang.org/x/tools v0.44.0 // indirect
 	google.golang.org/api v0.277.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260406210006-6f92a3bedf2d // indirect
